@@ -19,7 +19,7 @@
 	<meta name="msapplication-config" content="/static/icons/browserconfig.xml">
 	<meta name="theme-color" content="#9d0000">
 	<!-- Primary Meta Tags -->
-	<title>Fatality Records</title>
+	<title>Contact | Fatality Records</title>
 	<meta name="title" content="Fatality Records">
 	<meta name="description" content="Fatality Records by Rick Verboom and DragunoV - More info coming soon">
 	<meta name="robots" content="index, follow">
@@ -74,17 +74,54 @@
 </head>
 
 <body class="background">
-	<div class="container valign-wrapper" style="position: absolute; color: white; padding-top: 15%">
+	<div class="container" style="padding-top: 52px; background: rgba(255,255,255, 0.9)">
 		<div class="row">
-			<div class="col s6 offset-s1 white-text text-darken-2">
-				<img src="https://fatalityrecords.s3.eu-central-1.amazonaws.com/logo/png/text/text_400px.png" class="responsive-img">
-				<h3>Coming Soon</h3>
-				<p>Connect on SoundCloud to stay up to date</p>
-				<a class="waves-effect waves-light btn red darken-3" href="https://soundcloud.com/fatalityrecordss">SoundCloud</a>
+			<div class="col s12 black-text">
+				<h1 class="black-text">Get in touch</h1>
+				<p>To contact Fatality Records, use the contact form below. A representative of Fatality Records will contact you about your inquiry as soon as possible</p>
+				<p><b>Note: All fields are required</b></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col s6 offset-s1 white-text">
+				<form action="https://formspree.io/xqkpbpjn" method="post" enctype="application/x-www-form-urlencoded" class="col s12">
+					<div class="row">
+						<div class="input-field col s6">
+          					<input placeholder="E.g. John" id="first_name" type="text" class="validate" name="first_name" autofocus required>
+          					<label for="first_name">First Name</label>
+						</div>
+						<div class="input-field col s6">
+							<input placeholder="E.g. Doe" id="last_name" type="text" class="validate" name="last_name" required>
+							<label for="last_name">Last Name</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+          					<input placeholder="E.g. me@example.com" id="first_name" type="email" class="validate" name="first_name" required>
+          					<label for="first_name">Email address</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+						  <select name="reason" required>
+							  <option value="" disabled selected>Choose your option</option>
+							  <option value="copyright">Copyright</option>
+							  <option value="general">General</option>
+							  <option value="commplaint">Complaint</option>
+						  </select>
+						<label>Reason for contacting</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<textarea id="message" class="materialize-textarea" data-length="500" name="message"></textarea>
+							<label for="message">Your message (Max. 500 characters)</label>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
-	<div id="particles-js"></div>
 
 	<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
@@ -94,7 +131,15 @@
 	<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 	<script src="static/js/app.js"></script>
+	<script>
+		$(document).ready(function(){
+			M.AutoInit();
+			$('select').formSelect();
+			$('textarea#message').characterCounter();
+		});
+	</script>
 </body>
 
 </html>
